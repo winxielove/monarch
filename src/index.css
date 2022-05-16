@@ -18,6 +18,11 @@ html, body, #root {
   text-align: left;
 }
 
+.stage {
+  width: 100%;
+  height: 100%;
+}
+
 .butterfly {
   position: absolute;
   line-height: 0;

@@ -1,11 +1,16 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Monarch from './Classes/Monarch'
 import Butterfly from './Components/Butterfly'
+import Stage from './Components/Stage'
 const Scene = () => {
+
+
+    const canvasRef = useRef()
+
     const [butterflies, setButterflies] = useState(
         () => {
-            var bt = Array(50).fill("b")
+            var bt = Array(100).fill("b")
             var i = 0;
             bt.forEach(() => {
                 bt[i] = new Monarch(window)
@@ -21,11 +26,10 @@ const Scene = () => {
   return (
     <div className='scene'>
 
-        {butterflies.map((b) => {
-            return (
-                <Butterfly b={b}/>
-            )
-        })}
+        
+        <Stage canvasRef={canvasRef} obj={butterflies}/>
+
+        <canvas className='stage' ref={canvasRef} width={window.innerWidth} height={window.innerHeight}/>
 
     </div>
   )

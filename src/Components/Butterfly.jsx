@@ -5,20 +5,6 @@ const Butterfly = (props) => {
     const elm = useRef()
     const ctn = useRef()
     const [data, setData] = useState([])
-
-    const mm = (e) => {
-        
-        var ang = (Math.atan( (e.pageY - b.y) / (e.pageX - b.x)) * 180) / Math.PI;
-
-        ctn.current.style.transform = `rotate(${ang + 90 + (e.pageX >= b.x ? 0 : 180)}deg)`
-      }
-
-    useEffect(() => {
-      document.addEventListener("mousemove", mm)
-      return () => {
-        document.removeEventListener("mousemove", mm)
-      } 
-    }, ["lsadjflaksdjf"])
     
 
   return (

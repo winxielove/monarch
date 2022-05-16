@@ -6,4 +6,9 @@ export default class Monarch {
     getCoordinates() {
         return [this.x, this.y]
     }
+    tick (ctx) {
+        console.log(ctx)
+        ctx.fillStyle = "red";
+        ctx.flllRect(this.x - 5, this.y - 5, 10, 10)
+    }
 }
