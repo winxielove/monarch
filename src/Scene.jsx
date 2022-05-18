@@ -7,10 +7,11 @@ const Scene = () => {
 
 
     const canvasRef = useRef()
+    const cockRef = useRef()
 
     const [butterflies, setButterflies] = useState(
         () => {
-            var bt = Array(100).fill("b")
+            var bt = Array(10).fill("b")
             var i = 0;
             bt.forEach(() => {
                 bt[i] = new Monarch(window)
@@ -27,9 +28,11 @@ const Scene = () => {
     <div className='scene'>
 
         
-        <Stage canvasRef={canvasRef} obj={butterflies}/>
+        <Stage canvasRef={canvasRef} obj={butterflies} cockRef={cockRef}/>
 
         <canvas className='stage' ref={canvasRef} width={window.innerWidth} height={window.innerHeight}/>
+
+        <img src="assets/cock.png" alt="" style={{display: "none", width: "50px", height: "50px"}} ref={cockRef}/>
 
     </div>
   )

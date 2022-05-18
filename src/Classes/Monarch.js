@@ -1,7 +1,7 @@
 export default class Monarch {
     constructor(window) {
-        this.x = Math.floor(Math.random() * window.innerWidth)
-        this.y = Math.floor(Math.random() * window.innerHeight)
+        this.x = Math.floor(window.innerWidth * Math.random())
+        this.y = Math.floor(window.innerHeight * Math.random())
     }
     getCoordinates() {
         return [this.x, this.y]
