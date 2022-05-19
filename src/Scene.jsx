@@ -11,7 +11,7 @@ const Scene = () => {
 
     const [butterflies, setButterflies] = useState(
         () => {
-            var bt = Array(10).fill("b")
+            var bt = Array(99).fill("b")
             var i = 0;
             bt.forEach(() => {
                 bt[i] = new Monarch(window)

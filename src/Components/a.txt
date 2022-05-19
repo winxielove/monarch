@@ -1,0 +1,48 @@
+if (mousePos.current) {
+    ctx.translate(o.x, o.y)
+        ctx.rotate((Math.abs((mousePos.current.pageY <= o.y ?
+            (mousePos.current.pageX >= o.x ? (90) : (0))
+            :
+            (mousePos.current.pageX >= o.x ? (0) : (90))
+        ) - Math.atan(
+        ((o.y >= mousePos.current.pageY) ? o.y - mousePos.current.pageY : mousePos.current.pageY - o.y)
+        
+        /
+
+        ((o.x >= mousePos.current.pageX) ? o.x - mousePos.current.pageX : mousePos.current.pageX - o.x)
+            
+        ) * (180/Math.PI)) + (mousePos.current.pageY <= o.y ?
+            (mousePos.current.pageX >= o.x ? (0) : (270))
+            :
+            (mousePos.current.pageX >= o.x ? (90) : (180))  
+        )) * (Math.PI / 180));
+    }
+
+    
+    ctx.font = '30px serif';
+    ctx.textBaseline = "bottom"
+    ctx.fillText("M",
+    ((mousePos.current == undefined) ? o.x : 0 - Math.floor(ctx.measureText("🦋").width / 2)),
+    ((mousePos.current == undefined) ? o.y : 0))
+
+
+    if (mousePos.current) {
+        ctx.rotate(-(Math.abs((mousePos.current.pageY <= o.y ?
+            (mousePos.current.pageX >= o.x ? (90) : (0))
+            :
+            (mousePos.current.pageX >= o.x ? (0) : (90))
+        ) - Math.atan(
+        ((o.y >= mousePos.current.pageY) ? o.y - mousePos.current.pageY : mousePos.current.pageY - o.y)
+        
+        /
+
+        ((o.x >= mousePos.current.pageX) ? o.x - mousePos.current.pageX : mousePos.current.pageX - o.x)
+            
+        ) * (180/Math.PI)) + (mousePos.current.pageY <= o.y ?
+            (mousePos.current.pageX >= o.x ? (0) : (270))
+            :
+            (mousePos.current.pageX >= o.x ? (90) : (180))  
+        )) * (Math.PI / 180));
+        ctx.translate(-o.x, -o.y)
+
+    }
